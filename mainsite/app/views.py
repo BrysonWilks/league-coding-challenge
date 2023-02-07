@@ -9,9 +9,9 @@ import csv
 def echo(request):
     if request.method == "POST":
         filename = request.POST['file']
-        f = open(filename, "r")
-        #print(f.read())
-        return(HttpResponse(f))
+        with open(filename) as f:
+            output = f.read()
+        return(HttpResponse(output))
 
     return HttpResponse("this endpoint only supports POST requests please try again")
 
