@@ -11,16 +11,15 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import base64
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-nuas0m@jcgq$&k4%e%4ncz)lfnsx2-($2%0rmql0qb(dr7=(=!'
+CODED_STRING = 'ZGphbmdvLWluc2VjdXJlLW51YXMwbUBqY2dxJCZrNCVlJTRuY3opbGZuc3gyLSgkMiUwcm1xbDBxYihkcjc9KD0hJw=='
+
+SECRET_KEY = base64.b64decode(CODED_STRING)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
