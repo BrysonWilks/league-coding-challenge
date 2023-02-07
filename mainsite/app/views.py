@@ -8,9 +8,12 @@ import csv
 @csrf_exempt
 def echo(request):
     if request.method == "POST":
-        print("200 POST REQUEST RECEIVED")
+        filename = request.POST['file']
+        f = open(filename, "r")
+        #print(f.read())
+        return(HttpResponse(f))
 
-    return HttpResponse("ECHO REQUEST RECEIVED")
+    return HttpResponse("this endpoint only supports POST requests please try again")
 
 
 @csrf_exempt
