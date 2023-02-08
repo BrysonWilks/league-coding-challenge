@@ -4,7 +4,6 @@ import numpy as np
 
 def get_2D_array(filename: str) -> List[List[int]]:
     results = []
-
     try:
         with open(filename) as csvfile:
             reader = csv.reader(csvfile)
