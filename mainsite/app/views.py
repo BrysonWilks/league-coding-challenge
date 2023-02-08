@@ -25,7 +25,7 @@ def invert(request):
             for i in inverted_arr:
                 output += (','.join(map(str, i)))
                 output += "\n"
-                return (HttpResponse(output))
+            return (HttpResponse(output))
         except:
             return(HttpResponse("Expected File, found none"))
 
