@@ -3,69 +3,81 @@ from . import utils
 
 def echo(request):
     if request.method == "POST":
-        filename = request.POST['file']
-        with open(filename) as f:
-            output = f.read()
-        return(HttpResponse(output))
-
+        try:
+            filename = request.POST['file']
+            with open(filename) as f:
+                output = f.read()
+            return(HttpResponse(output))
+        except:
+            return(HttpResponse("Expected File, found none"))
     return HttpResponse("this endpoint only supports POST requests please try again")
 
 
 def invert(request):
     if request.method == "POST":
-        filename = request.POST['file']
-        new_arr = utils.get_2D_array(filename)
-        inverted_arr = zip(*new_arr)
+        try:
+            filename = request.POST['file']
+            new_arr = utils.get_2D_array(filename)
+            inverted_arr = zip(*new_arr)
 
-        output = ""
-        for i in inverted_arr:
-            output += (','.join(map(str, i)))
-            output += "\n"
-
-        return(HttpResponse(output))
+            output = ""
+            for i in inverted_arr:
+                output += (','.join(map(str, i)))
+                output += "\n"
+                return (HttpResponse(output))
+        except:
+            return(HttpResponse("Expected File, found none"))
 
     return HttpResponse("this endpoint only supports POST requests please try again")
 
 #
 def flatten(request):
     if request.method == "POST":
-        filename = request.POST['file']
-        new_arr = utils.get_2D_array(filename)
-        output = ','.join(inner for outer in new_arr for inner in outer)
-        return(HttpResponse(output))
-
+        try:
+            filename = request.POST['file']
+            new_arr = utils.get_2D_array(filename)
+            output = ','.join(inner for outer in new_arr for inner in outer)
+            return(HttpResponse(output))
+        except:
+            return (HttpResponse("Expected File, found none"))
     return HttpResponse("this endpoint only supports POST requests please try again")
 #
 
 def sum(request):
     if request.method == "POST":
-        filename = request.POST['file']
-        new_arr = utils.get_2D_array(filename)
+        try:
+            filename = request.POST['file']
+            new_arr = utils.get_2D_array(filename)
 
-        total = 0
+            total = 0
 
-        for x in new_arr:
-            for y in x:
-                if y.isnumeric():
-                    total += int(y)
+            for x in new_arr:
+                for y in x:
+                    if y.isnumeric():
+                        total += int(y)
 
-        return HttpResponse(total)
+            return HttpResponse(total)
+        except:
+            return HttpResponse("Expected File, found none")
 
     return HttpResponse("this endpoint only supports POST requests please try again")
 
 def multiply(request):
     if request.method == "POST":
-        filename = request.POST['file']
-        new_arr = utils.get_2D_array(filename)
+        try:
+            filename = request.POST['file']
+            new_arr = utils.get_2D_array(filename)
 
-        total = 1
+            total = 1
 
-        for x in new_arr:
-            for y in x:
-                if y.isnumeric():
-                    total *= int(y)
+            for x in new_arr:
+                for y in x:
+                    if y.isnumeric():
+                        total *= int(y)
 
-        return HttpResponse(total)
+            return HttpResponse(total)
+        except:
+            return HttpResponse("Expected File, found none")
 
     return HttpResponse("this endpoint only supports POST requests please try again")
 
