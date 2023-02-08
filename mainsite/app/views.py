@@ -18,7 +18,8 @@ def invert(request):
     if request.method == "POST":
         filename = request.POST['file']
         new_arr = utils.get_2D_array(filename)
-        return HttpResponse(zip(*new_arr))
+        inverted_arr = zip(*new_arr)
+        return(HttpResponse())
 
         # remember to convert this one to a string
     return HttpResponse("this endpoint only supports POST requests please try again")
@@ -26,7 +27,13 @@ def invert(request):
 #
 @csrf_exempt
 def flatten(request):
-    pass
+    if request.method == "POST":
+        filename = request.POST['file']
+        new_arr = utils.get_2D_array(filename)
+        output = ','.join(x for sl in new_arr for x in sl)
+        return(HttpResponse(output))
+
+    return HttpResponse("this endpoint only supports POST requests please try again")
 #
 @csrf_exempt
 def sum(request):
