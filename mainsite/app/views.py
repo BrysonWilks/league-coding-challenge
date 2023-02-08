@@ -58,6 +58,7 @@ def multiply(request):
         new_arr = utils.get_2D_array(filename)
 
         total = 1
+
         for x in new_arr:
             for y in x:
                 total *= int(y)
