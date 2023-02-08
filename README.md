@@ -53,3 +53,47 @@ Starting development server at http://127.0.0.1:8080/
 Quit the server with CONTROL-C.
 ```
 
+---------------------------------
+
+Open up a new tab in your terminal / command prompt.
+
+On MacOs this is done by pressing 'command + T'
+On Linux this is done by pressing 'Ctrl + Shift + T'
+On Windows this is done by pressing 'Ctrl + Win + T'
+ 
+Enter in curl HTTP request like so
+
+```
+curl -F 'file=matrix.csv' "localhost:8080/echo"
+```
+
+Happy Testing!
+
+---------------------------------
+
+# FAQ
+
+Q - I'm having trouble creating my virtual environment, is there anyway I can recreate it?
+
+A - Yes! First make sure you have the 'virtualenv' package installed in Python. This can be done by typing 
+
+```
+pip install virtualenv
+```
+
+Once this is done type the following command in the 'mainsite' directory 
+
+```
+virtualenv venv && venv/bin/pip install -r requirements.txt
+```
+
+Q - How do I get out of this virtual environment?
+
+A - To leave the virtual environment type 
+
+```
+deactivate
+```
+
+If done correctly you should not see the name of the virtual environment in parentheses anymore
+
