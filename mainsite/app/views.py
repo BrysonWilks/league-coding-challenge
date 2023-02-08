@@ -1,9 +1,6 @@
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-import csv
-
-# Create your views here
-
+from . import utils
 
 @csrf_exempt
 def echo(request):
@@ -18,7 +15,13 @@ def echo(request):
 
 @csrf_exempt
 def invert(request):
-    pass
+    if request.method == "POST":
+        filename = request.POST['file']
+        new_arr = utils.get_2D_array(filename)
+        return HttpResponse(zip(*new_arr))
+
+        # remember to convert this one to a string
+    return HttpResponse("this endpoint only supports POST requests please try again")
 
 #
 @csrf_exempt
