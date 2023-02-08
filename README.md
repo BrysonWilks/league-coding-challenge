@@ -31,7 +31,7 @@ If this is done correctly you should see the name of the virtual environment nex
 (virtual-env) ➜  bin
 ```
 
-Once your virtual environment has been activate please navigate to the 'mainsite' directory by using this command
+Once your virtual environment has been activated please navigate to the 'mainsite' directory by using this command
 
 ```
 cd ../../mainsite/
@@ -109,5 +109,3 @@ deactivate
 ```
 
 If done correctly you should not see the name of the virtual environment in parentheses anymore
-
-
