@@ -19,9 +19,14 @@ def invert(request):
         filename = request.POST['file']
         new_arr = utils.get_2D_array(filename)
         inverted_arr = zip(*new_arr)
-        return(HttpResponse(inverted_arr))
 
-        # remember to convert this one to a string
+        output = ""
+        for i in inverted_arr:
+            output += (','.join(map(str, i)))
+            output += "\n"
+
+        return(HttpResponse(output))
+
     return HttpResponse("this endpoint only supports POST requests please try again")
 
 #
@@ -64,3 +69,9 @@ def multiply(request):
         return HttpResponse(total)
 
     return HttpResponse("this endpoint only supports POST requests please try again")
+
+@csrf_exempt
+def home(request):
+    err_message = """Whoops! Looks like you forgot your endpoint \n\nThe correct choices are 'sum', 'multiply', 'echo', 'invert', and 'flatten'
+    """
+    return HttpResponse(err_message)

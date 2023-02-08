@@ -7,4 +7,5 @@ urlpatterns = [
     path('flatten', views.flatten, name='flatten'),
     path('sum', views.sum, name='sum'),
     path('multiply', views.multiply, name='multiply'),
+    path('', views.home, name='home'),
 ]
