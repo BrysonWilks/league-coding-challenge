@@ -43,6 +43,7 @@ def sum(request):
         new_arr = utils.get_2D_array(filename)
 
         total = 0
+
         for x in new_arr:
             for y in x:
                 total += int(y)
