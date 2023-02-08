@@ -31,3 +31,25 @@ If this is done correctly you should see the name of the virtual environment nex
 (virtual-env) ➜  bin
 ```
 
+Once your virtual environment has been activate please navigate to the 'mainsite' directory by using this command
+
+```
+cd ../../mainsite/
+```
+
+Once you are in the mainsite directory, run this command to start the Django web server 
+
+```
+python manage.py runserver
+```
+
+If your virtual environment is set up correctly you should see this output upon starting your server
+
+```
+System check identified no issues (0 silenced).
+[month] [day], [year] - [UTC time]
+Django version 4.1.6, using settings 'mainsite.settings'
+Starting development server at http://127.0.0.1:8080/
+Quit the server with CONTROL-C.
+```
+
