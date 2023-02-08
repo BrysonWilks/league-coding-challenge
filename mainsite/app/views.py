@@ -19,6 +19,9 @@ def invert(request):
         try:
             filename = request.POST['file']
             new_arr = utils.get_2D_array(filename)
+
+            if len(new_arr) == 1:
+                return (HttpResponse("Can not invert only one element try again"))
             inverted_arr = zip(*new_arr)
 
             output = ""
