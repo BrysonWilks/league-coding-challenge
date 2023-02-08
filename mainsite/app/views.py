@@ -6,7 +6,7 @@ def echo(request):
         filename = request.POST['file']
         with open(filename) as f:
             output = f.read()
-        return(HttpResponse(str(output)))
+        return(HttpResponse(output))
 
     return HttpResponse("this endpoint only supports POST requests please try again")
 
