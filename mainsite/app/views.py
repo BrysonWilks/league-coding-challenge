@@ -10,6 +10,7 @@ def echo(request):
             return(HttpResponse(output))
         except:
             return(HttpResponse("Expected File, found none"))
+
     return HttpResponse("this endpoint only supports POST requests please try again")
 
 
@@ -40,6 +41,7 @@ def flatten(request):
             return(HttpResponse(output))
         except:
             return (HttpResponse("Expected File, found none"))
+
     return HttpResponse("this endpoint only supports POST requests please try again")
 #
 
