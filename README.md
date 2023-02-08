@@ -61,8 +61,6 @@ On MacOs this is done by pressing 'command + T'
 
 On Linux this is done by pressing 'Ctrl + Shift + T'
 
-On Windows this is done by pressing 'Ctrl + Win + T'
- 
 Enter in curl HTTP request like so
 
 ```
