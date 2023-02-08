@@ -9,7 +9,7 @@ def echo(request):
                 output = f.read()
             return(HttpResponse(output))
         except:
-            return(HttpResponse("Expected File, found none"))
+            return(HttpResponse("Could not parse file, please make sure it's in csv format"))
 
     return HttpResponse("this endpoint only supports POST requests please try again")
 
@@ -27,7 +27,7 @@ def invert(request):
                 output += "\n"
             return (HttpResponse(output))
         except:
-            return(HttpResponse("Expected File, found none"))
+            return(HttpResponse("Could not parse file, please make sure it's in csv format"))
 
     return HttpResponse("this endpoint only supports POST requests please try again")
 
@@ -40,7 +40,7 @@ def flatten(request):
             output = ','.join(inner for outer in new_arr for inner in outer)
             return(HttpResponse(output))
         except:
-            return (HttpResponse("Expected File, found none"))
+            return (HttpResponse("Could not parse file, please make sure it's in csv format"))
 
     return HttpResponse("this endpoint only supports POST requests please try again")
 #
@@ -60,7 +60,7 @@ def sum(request):
 
             return HttpResponse(total)
         except:
-            return HttpResponse("Expected File, found none")
+            return HttpResponse("Could not parse file, please make sure it's in csv format")
 
     return HttpResponse("this endpoint only supports POST requests please try again")
 
@@ -79,7 +79,7 @@ def multiply(request):
 
             return HttpResponse(total)
         except:
-            return HttpResponse("Expected File, found none")
+            return HttpResponse("Could not parse file, please make sure it's in csv format")
 
     return HttpResponse("this endpoint only supports POST requests please try again")
 
