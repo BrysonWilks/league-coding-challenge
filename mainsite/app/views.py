@@ -46,7 +46,8 @@ def sum(request):
 
         for x in new_arr:
             for y in x:
-                total += int(y)
+                if y.isnumeric():
+                    total += int(y)
 
         return HttpResponse(total)
 
@@ -61,7 +62,8 @@ def multiply(request):
 
         for x in new_arr:
             for y in x:
-                total *= int(y)
+                if y.isnumeric():
+                    total *= int(y)
 
         return HttpResponse(total)
 
