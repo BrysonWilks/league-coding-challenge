@@ -77,11 +77,11 @@ Happy Testing!
 
 Keys areas to explore in codebase
 
-utils.py - contains logic to parse csv into 2D array
+**utils.py** - contains logic to parse csv into 2D array
 
-views.py - contains logic for the different endpoints ('echo', 'sum', 'flatten', 'multiply', 'invert')
+**views.py** - contains logic for the different endpoints ('echo', 'sum', 'flatten', 'multiply', 'invert')
 
-mainsite/app/urls.py - contains the routing for the different endpoints
+**mainsite/app/urls.py** - contains the routing for the different endpoints
 
 ---------------------------------
 # FAQ
