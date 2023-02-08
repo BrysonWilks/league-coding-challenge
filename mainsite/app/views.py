@@ -1,19 +1,16 @@
 from django.http import HttpResponse
-from django.views.decorators.csrf import csrf_exempt
 from . import utils
 
-@csrf_exempt
 def echo(request):
     if request.method == "POST":
         filename = request.POST['file']
         with open(filename) as f:
             output = f.read()
-        return(HttpResponse(output))
+        return(HttpResponse(str(output)))
 
     return HttpResponse("this endpoint only supports POST requests please try again")
 
 
-@csrf_exempt
 def invert(request):
     if request.method == "POST":
         filename = request.POST['file']
@@ -30,7 +27,6 @@ def invert(request):
     return HttpResponse("this endpoint only supports POST requests please try again")
 
 #
-@csrf_exempt
 def flatten(request):
     if request.method == "POST":
         filename = request.POST['file']
@@ -40,7 +36,7 @@ def flatten(request):
 
     return HttpResponse("this endpoint only supports POST requests please try again")
 #
-@csrf_exempt
+
 def sum(request):
     if request.method == "POST":
         filename = request.POST['file']
@@ -55,7 +51,6 @@ def sum(request):
 
     return HttpResponse("this endpoint only supports POST requests please try again")
 
-@csrf_exempt
 def multiply(request):
     if request.method == "POST":
         filename = request.POST['file']
@@ -70,8 +65,7 @@ def multiply(request):
 
     return HttpResponse("this endpoint only supports POST requests please try again")
 
-@csrf_exempt
+
 def home(request):
-    err_message = """Whoops! Looks like you forgot your endpoint \n\nThe correct choices are 'sum', 'multiply', 'echo', 'invert', and 'flatten'
-    """
+    err_message = "Whoops! Looks like you forgot your endpoint. \n\nThe correct choices are 'sum', 'multiply', 'echo', 'invert', and 'flatten'"
     return HttpResponse(err_message)
