@@ -73,6 +73,15 @@ Happy Testing!
 
 ---------------------------------
 
+# Key Areas
+
+Keys areas to explore in codebase
+
+utils.py - contains logic to parse csv into 2D array
+views.py - contains logic for the different endpoints ('echo', 'sum', 'flatten', 'multiply', 'invert')
+mainsite/app/urls.py - contains the routing for the different endpoints
+
+---------------------------------
 # FAQ
 
 Q - I'm having trouble creating my virtual environment, is there anyway I can recreate it?
@@ -98,4 +107,5 @@ deactivate
 ```
 
 If done correctly you should not see the name of the virtual environment in parentheses anymore
+
 
