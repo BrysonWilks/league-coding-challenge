@@ -27,7 +27,7 @@ source Activate
 
 To activate the virtual environent on winows please use this command in the **virtual-env** directory
 ```
-\Scripts\activate
+Scripts\activate
 ```
 
 If this is done correctly you should see the name of the virtual environment next to the directory name like so:
