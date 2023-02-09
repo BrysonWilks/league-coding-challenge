@@ -121,7 +121,7 @@ Q - I'm getting this error when I try to run the server on windows. How do I fix
 Error: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
 ```
 
-A - If you're getting an error while trying to run the web server on windows please change the port number the server runs on like in the example below
+A - If you're getting an error while trying to run the web server on windows please change the port number the server runs on like the below example
 
 ```
 python manage.py runserver 127.0.0.1:7000
