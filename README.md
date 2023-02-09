@@ -12,7 +12,7 @@ git clone https://github.com/BrysonWilks/league-coding-challenge.git
 
 ---------------------------------
 
-After the repo has been either cloned or downloaded via .zip file onto your local machine, please activate the virtual environment. This will install all of the packages necessary to run the web server 
+After the repo has been either cloned or downloaded via .zip file onto your local machine, please activate the virtual environment in a terminal/command prompt window. This will install all of the packages necessary to run the web server 
 
 To activate the virtual environment change your directory to the directory of the virtual environment with the command below
 
